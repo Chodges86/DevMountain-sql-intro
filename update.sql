@@ -1,12 +1,12 @@
 -- Find all customers with fax numbers and set those numbers to null.
 UPDATE customer
 SET fax = null
-WHERE fax LIKE '%'; -- THIS WORKS BUT I COULD NOT GET IT TO WORK WITH: WHERE fax != null;
+WHERE fax IS null;
 
 -- Find all customers with no company (null) and set their company to “Self”.
 UPDATE customer
 SET company = 'Self'
-WHERE company = null; -- THIS IS NOT WORKING
+WHERE company IS null;
 
 -- Find the customer Julia Barnett and change her last name to Thompson.
 SELECT * FROM customer
@@ -23,4 +23,4 @@ WHERE email = 'luisrojas@yahoo.cl';
 
 -- Find all tracks that are the genre Metal and have no composer. Set the composer to “The darkness around us”.
 SELECT * FROM track
-WHERE genre_id = 3 AND composer = null; -- THIS IS NOT WORKING
+WHERE genre_id = 3 AND composer IS null;
